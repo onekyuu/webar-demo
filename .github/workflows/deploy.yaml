@@ -37,4 +37,4 @@ jobs: # 需要执行的任务，可以有多个任务，所有的 job 都是并�
           SOURCE: "dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }} #阿里云的 ip
           REMOTE_USER: ${{ secrets.REMOTE_USER }} #阿里云用户
-          TARGET: "/root/workspace/ar-demo" #被部署的服务器路径
+          TARGET: "/var/www/html/ar-demo/" #被部署的服务器路径
