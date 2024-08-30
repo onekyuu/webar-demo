@@ -6,7 +6,7 @@ on: # 该 CI/CD 触发时的事件
 
 jobs: # 需要执行的任务，可以有多个任务，所有的 job 都是并行的，但往往会有依赖关系
   build:
-    runs-on: ubuntu-latest # github分配的运行平台，2-core CPU/7 GB of RAM memory/14 GB of SSD disk space
+    runs-on: ubuntu-20.04 # github分配的运行平台，2-core CPU/7 GB of RAM memory/14 GB of SSD disk space
     steps: # 某个任务的一系列步骤,如前端需要安装依赖，编译打包代码等等
       - name: Checkout repo
         uses: actions/checkout@v2 #选择一个 现有的action，执行你的操作
@@ -34,4 +34,4 @@ jobs: # 需要执行的任务，可以有多个任务，所有的 job 都是并�
           SOURCE: "./"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }} #阿里云的 ip
           REMOTE_USER: ${{ secrets.REMOTE_USER }} #阿里云用户
-          TARGET: "/opt/webwiki/docs" #被部署的服务器路径
+          TARGET: "/root/workspace/ar-demo" #被部署的服务器路径
