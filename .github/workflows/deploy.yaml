@@ -22,6 +22,8 @@ jobs: # 需要执行的任务，可以有多个任务，所有的 job 都是并�
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
+        with:
+          useLockFile: false
 
       - name: Build project
         run: npm run build
